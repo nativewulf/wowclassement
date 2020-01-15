@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PlayersComponent } from './players/players.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'players', component: PlayersComponent},
+  {path: 'navigation', component: NavigationComponent},
+  {path: '', redirectTo:'/navigation', pathMatch:'full'},
+  {path: 'detail/:id', component: PlayerDetailComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
